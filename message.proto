@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package greet;
+package message;
 
 option go_package="messagepb";
 
@@ -35,8 +35,8 @@ service MyDataService{
     rpc GetSum(SumRequest) returns (SumResponse) {};
 
     // SERVER_STREAMING
-    rpc StreamFromServer(Request) returns (stream Response) {};
+    rpc FetchData(Request) returns (stream Response) {};
 
     // Client_Streaming
-    //rpc FetchData(Request) returns (Response) {}; // Client_Streaming_RPC_Call
+    //rpc PushData(Request) returns (Response) {};
 }
