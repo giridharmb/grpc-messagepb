@@ -18,7 +18,7 @@ message Response {
     string result = 1;
 }
 
-service GreetService{
+service MyDataService{
     // Client_Streaming
     rpc FetchData(Request) returns (Response) {}; // Client_Streaming_RPC_Call
 }
