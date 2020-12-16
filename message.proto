@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package greet;
+
+option go_package="messagepb";
+
+message Data {
+    string first_name = 1;
+    string last_name = 2;
+    int32 age = 3;
+}
+
+message Request {
+    Data data = 1;
+}
+
+message Response {
+    string result = 1;
+}
+
+service GreetService{
+    // Client_Streaming
+    rpc FetchData(Request) returns (Response) {}; // Client_Streaming_RPC_Call
+}
