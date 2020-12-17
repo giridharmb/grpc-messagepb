@@ -289,6 +289,108 @@ func (x *Response) GetResult() string {
 	return ""
 }
 
+type DataRequestClientStream struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	RandomString string `protobuf:"bytes,1,opt,name=random_string,json=randomString,proto3" json:"random_string,omitempty"`
+	Index        int32  `protobuf:"varint,2,opt,name=index,proto3" json:"index,omitempty"`
+}
+
+func (x *DataRequestClientStream) Reset() {
+	*x = DataRequestClientStream{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_message_proto_msgTypes[5]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DataRequestClientStream) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DataRequestClientStream) ProtoMessage() {}
+
+func (x *DataRequestClientStream) ProtoReflect() protoreflect.Message {
+	mi := &file_message_proto_msgTypes[5]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DataRequestClientStream.ProtoReflect.Descriptor instead.
+func (*DataRequestClientStream) Descriptor() ([]byte, []int) {
+	return file_message_proto_rawDescGZIP(), []int{5}
+}
+
+func (x *DataRequestClientStream) GetRandomString() string {
+	if x != nil {
+		return x.RandomString
+	}
+	return ""
+}
+
+func (x *DataRequestClientStream) GetIndex() int32 {
+	if x != nil {
+		return x.Index
+	}
+	return 0
+}
+
+type DataResponseClientStream struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	String_ string `protobuf:"bytes,1,opt,name=string,proto3" json:"string,omitempty"`
+}
+
+func (x *DataResponseClientStream) Reset() {
+	*x = DataResponseClientStream{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_message_proto_msgTypes[6]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DataResponseClientStream) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DataResponseClientStream) ProtoMessage() {}
+
+func (x *DataResponseClientStream) ProtoReflect() protoreflect.Message {
+	mi := &file_message_proto_msgTypes[6]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DataResponseClientStream.ProtoReflect.Descriptor instead.
+func (*DataResponseClientStream) Descriptor() ([]byte, []int) {
+	return file_message_proto_rawDescGZIP(), []int{6}
+}
+
+func (x *DataResponseClientStream) GetString_() string {
+	if x != nil {
+		return x.String_
+	}
+	return ""
+}
+
 var File_message_proto protoreflect.FileDescriptor
 
 var file_message_proto_rawDesc = []byte{
@@ -312,16 +414,30 @@ var file_message_proto_rawDesc = []byte{
 	0x73, 0x73, 0x61, 0x67, 0x65, 0x2e, 0x44, 0x61, 0x74, 0x61, 0x52, 0x04, 0x64, 0x61, 0x74, 0x61,
 	0x22, 0x22, 0x0a, 0x08, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x16, 0x0a, 0x06,
 	0x72, 0x65, 0x73, 0x75, 0x6c, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x72, 0x65,
-	0x73, 0x75, 0x6c, 0x74, 0x32, 0x7c, 0x0a, 0x0d, 0x4d, 0x79, 0x44, 0x61, 0x74, 0x61, 0x53, 0x65,
-	0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x35, 0x0a, 0x06, 0x47, 0x65, 0x74, 0x53, 0x75, 0x6d, 0x12,
-	0x13, 0x2e, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2e, 0x53, 0x75, 0x6d, 0x52, 0x65, 0x71,
-	0x75, 0x65, 0x73, 0x74, 0x1a, 0x14, 0x2e, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2e, 0x53,
-	0x75, 0x6d, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x34, 0x0a, 0x09,
-	0x46, 0x65, 0x74, 0x63, 0x68, 0x44, 0x61, 0x74, 0x61, 0x12, 0x10, 0x2e, 0x6d, 0x65, 0x73, 0x73,
-	0x61, 0x67, 0x65, 0x2e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x11, 0x2e, 0x6d, 0x65,
-	0x73, 0x73, 0x61, 0x67, 0x65, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00,
-	0x30, 0x01, 0x42, 0x0b, 0x5a, 0x09, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x70, 0x62, 0x62,
-	0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x73, 0x75, 0x6c, 0x74, 0x22, 0x54, 0x0a, 0x17, 0x44, 0x61, 0x74, 0x61, 0x52, 0x65, 0x71, 0x75,
+	0x65, 0x73, 0x74, 0x43, 0x6c, 0x69, 0x65, 0x6e, 0x74, 0x53, 0x74, 0x72, 0x65, 0x61, 0x6d, 0x12,
+	0x23, 0x0a, 0x0d, 0x72, 0x61, 0x6e, 0x64, 0x6f, 0x6d, 0x5f, 0x73, 0x74, 0x72, 0x69, 0x6e, 0x67,
+	0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0c, 0x72, 0x61, 0x6e, 0x64, 0x6f, 0x6d, 0x53, 0x74,
+	0x72, 0x69, 0x6e, 0x67, 0x12, 0x14, 0x0a, 0x05, 0x69, 0x6e, 0x64, 0x65, 0x78, 0x18, 0x02, 0x20,
+	0x01, 0x28, 0x05, 0x52, 0x05, 0x69, 0x6e, 0x64, 0x65, 0x78, 0x22, 0x32, 0x0a, 0x18, 0x44, 0x61,
+	0x74, 0x61, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x43, 0x6c, 0x69, 0x65, 0x6e, 0x74,
+	0x53, 0x74, 0x72, 0x65, 0x61, 0x6d, 0x12, 0x16, 0x0a, 0x06, 0x73, 0x74, 0x72, 0x69, 0x6e, 0x67,
+	0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x73, 0x74, 0x72, 0x69, 0x6e, 0x67, 0x32, 0xd5,
+	0x01, 0x0a, 0x0d, 0x4d, 0x79, 0x44, 0x61, 0x74, 0x61, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
+	0x12, 0x35, 0x0a, 0x06, 0x47, 0x65, 0x74, 0x53, 0x75, 0x6d, 0x12, 0x13, 0x2e, 0x6d, 0x65, 0x73,
+	0x73, 0x61, 0x67, 0x65, 0x2e, 0x53, 0x75, 0x6d, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
+	0x14, 0x2e, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2e, 0x53, 0x75, 0x6d, 0x52, 0x65, 0x73,
+	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x34, 0x0a, 0x09, 0x46, 0x65, 0x74, 0x63, 0x68,
+	0x44, 0x61, 0x74, 0x61, 0x12, 0x10, 0x2e, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2e, 0x52,
+	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x11, 0x2e, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65,
+	0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x30, 0x01, 0x12, 0x57, 0x0a,
+	0x0c, 0x43, 0x6c, 0x69, 0x65, 0x6e, 0x74, 0x53, 0x74, 0x72, 0x65, 0x61, 0x6d, 0x12, 0x20, 0x2e,
+	0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2e, 0x44, 0x61, 0x74, 0x61, 0x52, 0x65, 0x71, 0x75,
+	0x65, 0x73, 0x74, 0x43, 0x6c, 0x69, 0x65, 0x6e, 0x74, 0x53, 0x74, 0x72, 0x65, 0x61, 0x6d, 0x1a,
+	0x21, 0x2e, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2e, 0x44, 0x61, 0x74, 0x61, 0x52, 0x65,
+	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x43, 0x6c, 0x69, 0x65, 0x6e, 0x74, 0x53, 0x74, 0x72, 0x65,
+	0x61, 0x6d, 0x22, 0x00, 0x28, 0x01, 0x42, 0x0b, 0x5a, 0x09, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67,
+	0x65, 0x70, 0x62, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -336,22 +452,26 @@ func file_message_proto_rawDescGZIP() []byte {
 	return file_message_proto_rawDescData
 }
 
-var file_message_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
+var file_message_proto_msgTypes = make([]protoimpl.MessageInfo, 7)
 var file_message_proto_goTypes = []interface{}{
-	(*SumRequest)(nil),  // 0: message.SumRequest
-	(*SumResponse)(nil), // 1: message.SumResponse
-	(*Data)(nil),        // 2: message.Data
-	(*Request)(nil),     // 3: message.Request
-	(*Response)(nil),    // 4: message.Response
+	(*SumRequest)(nil),               // 0: message.SumRequest
+	(*SumResponse)(nil),              // 1: message.SumResponse
+	(*Data)(nil),                     // 2: message.Data
+	(*Request)(nil),                  // 3: message.Request
+	(*Response)(nil),                 // 4: message.Response
+	(*DataRequestClientStream)(nil),  // 5: message.DataRequestClientStream
+	(*DataResponseClientStream)(nil), // 6: message.DataResponseClientStream
 }
 var file_message_proto_depIdxs = []int32{
 	2, // 0: message.Request.data:type_name -> message.Data
 	0, // 1: message.MyDataService.GetSum:input_type -> message.SumRequest
 	3, // 2: message.MyDataService.FetchData:input_type -> message.Request
-	1, // 3: message.MyDataService.GetSum:output_type -> message.SumResponse
-	4, // 4: message.MyDataService.FetchData:output_type -> message.Response
-	3, // [3:5] is the sub-list for method output_type
-	1, // [1:3] is the sub-list for method input_type
+	5, // 3: message.MyDataService.ClientStream:input_type -> message.DataRequestClientStream
+	1, // 4: message.MyDataService.GetSum:output_type -> message.SumResponse
+	4, // 5: message.MyDataService.FetchData:output_type -> message.Response
+	6, // 6: message.MyDataService.ClientStream:output_type -> message.DataResponseClientStream
+	4, // [4:7] is the sub-list for method output_type
+	1, // [1:4] is the sub-list for method input_type
 	1, // [1:1] is the sub-list for extension type_name
 	1, // [1:1] is the sub-list for extension extendee
 	0, // [0:1] is the sub-list for field type_name
@@ -423,6 +543,30 @@ func file_message_proto_init() {
 				return nil
 			}
 		}
+		file_message_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DataRequestClientStream); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_message_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DataResponseClientStream); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -430,7 +574,7 @@ func file_message_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_message_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   5,
+			NumMessages:   7,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
@@ -460,6 +604,8 @@ type MyDataServiceClient interface {
 	GetSum(ctx context.Context, in *SumRequest, opts ...grpc.CallOption) (*SumResponse, error)
 	// SERVER_STREAMING
 	FetchData(ctx context.Context, in *Request, opts ...grpc.CallOption) (MyDataService_FetchDataClient, error)
+	// Client_Streaming
+	ClientStream(ctx context.Context, opts ...grpc.CallOption) (MyDataService_ClientStreamClient, error)
 }
 
 type myDataServiceClient struct {
@@ -511,12 +657,48 @@ func (x *myDataServiceFetchDataClient) Recv() (*Response, error) {
 	return m, nil
 }
 
+func (c *myDataServiceClient) ClientStream(ctx context.Context, opts ...grpc.CallOption) (MyDataService_ClientStreamClient, error) {
+	stream, err := c.cc.NewStream(ctx, &_MyDataService_serviceDesc.Streams[1], "/message.MyDataService/ClientStream", opts...)
+	if err != nil {
+		return nil, err
+	}
+	x := &myDataServiceClientStreamClient{stream}
+	return x, nil
+}
+
+type MyDataService_ClientStreamClient interface {
+	Send(*DataRequestClientStream) error
+	CloseAndRecv() (*DataResponseClientStream, error)
+	grpc.ClientStream
+}
+
+type myDataServiceClientStreamClient struct {
+	grpc.ClientStream
+}
+
+func (x *myDataServiceClientStreamClient) Send(m *DataRequestClientStream) error {
+	return x.ClientStream.SendMsg(m)
+}
+
+func (x *myDataServiceClientStreamClient) CloseAndRecv() (*DataResponseClientStream, error) {
+	if err := x.ClientStream.CloseSend(); err != nil {
+		return nil, err
+	}
+	m := new(DataResponseClientStream)
+	if err := x.ClientStream.RecvMsg(m); err != nil {
+		return nil, err
+	}
+	return m, nil
+}
+
 // MyDataServiceServer is the server API for MyDataService service.
 type MyDataServiceServer interface {
 	// UNARY_API
 	GetSum(context.Context, *SumRequest) (*SumResponse, error)
 	// SERVER_STREAMING
 	FetchData(*Request, MyDataService_FetchDataServer) error
+	// Client_Streaming
+	ClientStream(MyDataService_ClientStreamServer) error
 }
 
 // UnimplementedMyDataServiceServer can be embedded to have forward compatible implementations.
@@ -528,6 +710,9 @@ func (*UnimplementedMyDataServiceServer) GetSum(context.Context, *SumRequest) (*
 }
 func (*UnimplementedMyDataServiceServer) FetchData(*Request, MyDataService_FetchDataServer) error {
 	return status.Errorf(codes.Unimplemented, "method FetchData not implemented")
+}
+func (*UnimplementedMyDataServiceServer) ClientStream(MyDataService_ClientStreamServer) error {
+	return status.Errorf(codes.Unimplemented, "method ClientStream not implemented")
 }
 
 func RegisterMyDataServiceServer(s *grpc.Server, srv MyDataServiceServer) {
@@ -573,6 +758,32 @@ func (x *myDataServiceFetchDataServer) Send(m *Response) error {
 	return x.ServerStream.SendMsg(m)
 }
 
+func _MyDataService_ClientStream_Handler(srv interface{}, stream grpc.ServerStream) error {
+	return srv.(MyDataServiceServer).ClientStream(&myDataServiceClientStreamServer{stream})
+}
+
+type MyDataService_ClientStreamServer interface {
+	SendAndClose(*DataResponseClientStream) error
+	Recv() (*DataRequestClientStream, error)
+	grpc.ServerStream
+}
+
+type myDataServiceClientStreamServer struct {
+	grpc.ServerStream
+}
+
+func (x *myDataServiceClientStreamServer) SendAndClose(m *DataResponseClientStream) error {
+	return x.ServerStream.SendMsg(m)
+}
+
+func (x *myDataServiceClientStreamServer) Recv() (*DataRequestClientStream, error) {
+	m := new(DataRequestClientStream)
+	if err := x.ServerStream.RecvMsg(m); err != nil {
+		return nil, err
+	}
+	return m, nil
+}
+
 var _MyDataService_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "message.MyDataService",
 	HandlerType: (*MyDataServiceServer)(nil),
@@ -587,6 +798,11 @@ var _MyDataService_serviceDesc = grpc.ServiceDesc{
 			StreamName:    "FetchData",
 			Handler:       _MyDataService_FetchData_Handler,
 			ServerStreams: true,
+		},
+		{
+			StreamName:    "ClientStream",
+			Handler:       _MyDataService_ClientStream_Handler,
+			ClientStreams: true,
 		},
 	},
 	Metadata: "message.proto",

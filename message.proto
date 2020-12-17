@@ -29,6 +29,15 @@ message Response {
     string result = 1;
 }
 
+message DataRequestClientStream {
+  string random_string = 1;
+  int32 index = 2;
+}
+
+message DataResponseClientStream {
+  string string = 1;
+}
+
 service MyDataService{
 
     // UNARY_API
@@ -38,5 +47,5 @@ service MyDataService{
     rpc FetchData(Request) returns (stream Response) {};
 
     // Client_Streaming
-    //rpc PushData(Request) returns (Response) {};
+    rpc ClientStream(stream DataRequestClientStream) returns (DataResponseClientStream) {};
 }
