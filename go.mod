@@ -1,4 +1,4 @@
-module github.com/giridharmb/grpc-messagepb.git
+module github.com/giridharmb/grpc-messagepb
 
 go 1.14
 
