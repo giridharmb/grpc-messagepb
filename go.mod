@@ -1,4 +1,4 @@
-module github.com/giridharmb/grpc-client-streaming-messagepb
+module github.com/giridharmb/grpc-messagepb.git
 
 go 1.14
 
