@@ -48,6 +48,14 @@ message BDStreamMessageResponse {
   string hash = 1;
 }
 
+message BDTransferMessage {
+  bytes data = 1;
+}
+
+message BDTransferResponse {
+  float percent_complete = 1;
+}
+
 service MyDataService{
     // UNARY_API
     rpc GetSum(SumRequest) returns (SumResponse) {};
@@ -60,4 +68,7 @@ service MyDataService{
 
     // BIDI_STEAMING
     rpc BDStream(stream BDStreamMessageRequest) returns (stream BDStreamMessageResponse) {};
+
+    // BIDI_DATA_TRANSFER
+    rpc BDTransfer(stream BDTransferMessage) returns (stream BDTransferResponse) {};
 }
