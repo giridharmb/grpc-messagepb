@@ -50,6 +50,7 @@ message BDStreamMessageResponse {
 
 message BDTransferMessage {
   bytes data = 1;
+  string file_name = 2;
 }
 
 message BDTransferResponse {
