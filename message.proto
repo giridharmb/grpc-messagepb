@@ -38,8 +38,17 @@ message DataResponseClientStream {
   string string = 1;
 }
 
-service MyDataService{
 
+message BDStreamMessageRequest {
+  string first_name = 1;
+  string last_name = 2;
+}
+
+message BDStreamMessageResponse {
+  string hash = 1;
+}
+
+service MyDataService{
     // UNARY_API
     rpc GetSum(SumRequest) returns (SumResponse) {};
 
@@ -48,4 +57,7 @@ service MyDataService{
 
     // Client_Streaming
     rpc ClientStream(stream DataRequestClientStream) returns (DataResponseClientStream) {};
+
+    // BIDI_STEAMING
+    rpc BDStream(stream BDStreamMessageRequest) returns (stream BDStreamMessageResponse) {};
 }
